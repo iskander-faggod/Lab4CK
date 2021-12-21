@@ -47,6 +47,13 @@ int count_words(FILE* file){
     return num_of_words;
 }
 
+int count_file_size(FILE* file){
+    int file_size = 0;
+    fseek(file, 0, SEEK_END); // перемещаем внутренний указатель в конец файла
+    file_size = ftell(file); // получаем номер последнего байта
+    return file_size;
+}
+
 int main(int argc, char* argv[])
 {
     FILE *file = fopen(argv[2], "r"); // открываем файл на чтение
@@ -68,6 +75,12 @@ int main(int argc, char* argv[])
             int num_of_words;
             num_of_words = count_words(file);
             printf("\nNumber of Words = %d", num_of_words);
+        }
+        else if (strcmp(argv[1], "-c") == 0 || strcmp(argv[1], "--bytes") == 0)
+        {
+            int file_size;
+            file_size = count_file_size(file_byte);
+            printf("\nFile size = %d", file_size);
         }
         else
         {
