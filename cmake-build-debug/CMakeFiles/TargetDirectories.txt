@@ -1,0 +1,3 @@
+D:/Programming/Programming/Lab4CK_/cmake-build-debug/CMakeFiles/Lab4CK_.dir
+D:/Programming/Programming/Lab4CK_/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Programming/Programming/Lab4CK_/cmake-build-debug/CMakeFiles/rebuild_cache.dir
