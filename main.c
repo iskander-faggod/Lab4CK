@@ -29,6 +29,24 @@ int count_lines(FILE* file){
     return num_of_lines;
 }
 
+int count_words(FILE* file){
+    int symbol, flag = 0;
+    int num_of_words = 0;
+    while ((symbol = fgetc(file)) != EOF)
+    {
+        if (symbol == '\n' || symbol == ' ' || symbol == '\t')
+        {
+            flag = 0;
+        }
+        else if (flag == 0)
+        {
+            flag = 1;
+            num_of_words++;
+        }
+    }
+    return num_of_words;
+}
+
 int main(int argc, char* argv[])
 {
     FILE *file = fopen(argv[2], "r"); // открываем файл на чтение
@@ -44,6 +62,12 @@ int main(int argc, char* argv[])
             int num_of_lines;
             num_of_lines = count_lines(file);
             printf("\nNumber of Lines = %d", num_of_lines);
+        }
+        else if (strcmp(argv[1], "-w") == 0 || strcmp(argv[1], "--words") == 0)
+        {
+            int num_of_words;
+            num_of_words = count_words(file);
+            printf("\nNumber of Words = %d", num_of_words);
         }
         else
         {
