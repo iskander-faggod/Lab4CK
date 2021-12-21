@@ -54,7 +54,7 @@ int count_file_size(FILE* file){
     return file_size;
 }
 
-int main(int argc, char* argv[])
+int (int argc, char* argv[])
 {
     FILE *file = fopen(argv[2], "r"); // открываем файл на чтение
     FILE *file_byte = fopen(argv[2], "rb"); // открываем файл на чтение
